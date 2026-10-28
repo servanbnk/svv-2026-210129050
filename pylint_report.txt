@@ -1,0 +1,7 @@
+************* Module business_utils
+student_build\210129050\business_utils.py:14:0: W0102: Dangerous default value [] as argument (dangerous-default-value)
+student_build\210129050\business_utils.py:27:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+
+------------------------------------------------------------------
+Your code has been rated at 9.50/10 (previous run: 9.75/10, -0.25)
+

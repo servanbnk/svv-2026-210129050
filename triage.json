@@ -1,0 +1,73 @@
+{
+  "student_id": "210129050",
+  "pylint_messages": [
+    {
+      "location": "student_build/210129050/business_utils.py, line 14",
+      "message_id": "W0102",
+      "symbol": "dangerous-default-value",
+      "verdict": "true positive",
+      "action": "fix now",
+      "reason": "The default list is created once and shared by every call of add_order, so orders leak between unrelated calls. This is a real correctness bug and should be fixed by using None as the default."
+    },
+    {
+      "location": "student_build/210129050/business_utils.py, line 27",
+      "message_id": "R1705",
+      "symbol": "no-else-return",
+      "verdict": "true positive",
+      "action": "ticket",
+      "reason": "The else after return is unnecessary and makes the function slightly harder to read, but the result is still correct. It is a genuine style issue with low priority, so it can be cleaned up later."
+    }
+  ],
+  "review_vs_tool": [
+    {
+      "week3_location": "student_build/210129050/business_utils.py, line 6",
+      "reported_by_pylint": false,
+      "explanation": "The formula is valid Python; only the docstring shows it returns the discount instead of the discounted price, and pylint does not compare code with docstrings."
+    },
+    {
+      "week3_location": "student_build/210129050/business_utils.py, line 11",
+      "reported_by_pylint": false,
+      "explanation": "Multiplying two numbers is legal code, so pylint cannot know the base amount should have been added."
+    },
+    {
+      "week3_location": "student_build/210129050/business_utils.py, line 14",
+      "reported_by_pylint": true,
+      "explanation": "A mutable default argument is a fixed code pattern that pylint checks for directly (W0102)."
+    },
+    {
+      "week3_location": "student_build/210129050/business_utils.py, line 21",
+      "reported_by_pylint": false,
+      "explanation": "Choosing > instead of >= is a boundary decision from the specification, which pylint does not know."
+    },
+    {
+      "week3_location": "student_build/210129050/business_utils.py, line 27",
+      "reported_by_pylint": true,
+      "explanation": "The unnecessary else after return is a structural pattern that pylint recognises (R1705), although it cannot see the missing input validation."
+    },
+    {
+      "week3_location": "student_build/210129050/math_utils.py, line 6",
+      "reported_by_pylint": false,
+      "explanation": "The division by zero only happens at runtime for an empty list, and pylint does not track the possible values of len(numbers)."
+    },
+    {
+      "week3_location": "student_build/210129050/math_utils.py, line 14",
+      "reported_by_pylint": false,
+      "explanation": "Returning low is a valid variable reference, so the wrong value is only visible by understanding what clamp should do."
+    },
+    {
+      "week3_location": "student_build/210129050/math_utils.py, line 21",
+      "reported_by_pylint": false,
+      "explanation": "range(1, n) is a correct call; the off-by-one error depends on the meaning of factorial, not on Python rules."
+    },
+    {
+      "week3_location": "student_build/210129050/text_utils.py, line 8",
+      "reported_by_pylint": false,
+      "explanation": "Checking membership in a lowercase string is valid code, and pylint cannot read the docstring requirement to ignore case."
+    },
+    {
+      "week3_location": "student_build/210129050/text_utils.py, line 15",
+      "reported_by_pylint": false,
+      "explanation": "The slice limit - 1 is syntactically fine, so the off-by-one boundary error is invisible to a static style checker."
+    }
+  ]
+}
