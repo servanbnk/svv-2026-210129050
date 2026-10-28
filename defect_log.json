@@ -1,0 +1,82 @@
+[
+  {
+    "location": "student_build/210129050/business_utils.py, line 6",
+    "description": "apply_discount returns price * percent / 100, which is the discount amount, not the price after the discount.",
+    "severity": "major",
+    "category": "wrong formula",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/business_utils.py, line 11",
+    "description": "total_with_tax returns amount * tax_rate, so the base amount is lost (100 with 0.18 gives 18 instead of 118).",
+    "severity": "major",
+    "category": "wrong formula",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/business_utils.py, line 14",
+    "description": "add_order uses a mutable default list, so orders from earlier calls are shared with later calls.",
+    "severity": "major",
+    "category": "logic error",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/business_utils.py, line 21",
+    "description": "is_free_shipping uses > 500, so a total of exactly 500 is rejected although the docstring says 500 or more.",
+    "severity": "major",
+    "category": "boundary error",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/business_utils.py, line 27",
+    "description": "late_fee has an else branch after return and does not validate that daily_fee is non-negative; unsure if this is a defect, logged as minor.",
+    "severity": "minor",
+    "category": "readability",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/math_utils.py, line 6",
+    "description": "average divides by len(numbers) without a check, so an empty list raises ZeroDivisionError instead of returning 0.",
+    "severity": "major",
+    "category": "missing case",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/math_utils.py, line 14",
+    "description": "clamp returns low when value is greater than high; it should return high.",
+    "severity": "major",
+    "category": "logic error",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/math_utils.py, line 21",
+    "description": "factorial loops over range(1, n), so n itself is never multiplied in (factorial(5) returns 24).",
+    "severity": "major",
+    "category": "boundary error",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/text_utils.py, line 8",
+    "description": "count_vowels only checks lowercase vowels, so uppercase vowels are not counted although the docstring says case is ignored.",
+    "severity": "major",
+    "category": "missing case",
+    "found_by": "Servan Benek",
+    "status": "open"
+  },
+  {
+    "location": "student_build/210129050/text_utils.py, line 15",
+    "description": "truncate slices text[:limit - 1], so the result is one character shorter than the allowed limit.",
+    "severity": "major",
+    "category": "boundary error",
+    "found_by": "Servan Benek",
+    "status": "open"
+  }
+]
