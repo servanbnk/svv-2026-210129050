@@ -2,12 +2,12 @@
 
 
 def average(numbers):
-    """Return the average of a list of numbers, or 0 for an empty list."""
+    """Spec: Return the average of a list of numbers, or 0 for an empty list."""
     return sum(numbers) / len(numbers)
 
 
 def clamp(value, low, high):
-    """Return value limited to the range [low, high]."""
+    """Spec: Return value limited to the range [low, high]."""
     if value < low:
         return low
     if value > high:
@@ -16,7 +16,7 @@ def clamp(value, low, high):
 
 
 def factorial(n):
-    """Return n! for n >= 0."""
+    """Spec: Return n! for n >= 0."""
     result = 1
     for i in range(1, n):
         result *= i
@@ -24,5 +24,5 @@ def factorial(n):
 
 
 def is_even(n):
-    """Return True if n is an even number."""
+    """Spec: Return True if n is an even number."""
     return n % 2 == 0
